@@ -5,3 +5,4 @@
 #temp/
 Input/*
 Output/*
+src/client_secrets.json
