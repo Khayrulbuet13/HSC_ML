@@ -1,0 +1,6 @@
+No      Things I tried:                                 Result
+
+
+1.      Increasing network depth in FC layer            Doesn't helped much
+2.      changing Resnet50 v1 and v2                     Doesn't helped much
+2.      changing resulation 64x64 from 128x128          Increased training speed but reduce accuracy as it crop diagonally croped images
