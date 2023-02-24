@@ -43,8 +43,8 @@ class Encoder(nn.Module):
         ftrs = []
         for block in self.enc_blocks:
             x = block(x)
-            ftrs.append(x)
-        return ftrs
+            # ftrs.append(x)
+        return x
     
 class Decoder(nn.Module):
     def __init__(self, chs):
@@ -56,8 +56,8 @@ class Decoder(nn.Module):
         ftrs = []
         for block in self.enc_blocks:
             x = block(x)
-            ftrs.append(x)
-        return ftrs   
+            # ftrs.append(x)
+        return  x  
     
 
 
@@ -69,10 +69,10 @@ class CNN_AE(nn.Module):
 
 
     def forward(self, x):
-        enc_ftrs = self.encoder(x)
-        out      = self.decoder(enc_ftrs[::-1][0])
+        x  = self.encoder(x)
+        x  = self.decoder(x)
 
-        return out
+        return x
 
 
 # Test the network
@@ -80,4 +80,5 @@ class CNN_AE(nn.Module):
 # x = torch.randn(10, 3, 64, 64)
 # enc_block_ck = CNN_AE()
 # ftrs = enc_block_ck(x)
-# for ftr in ftrs: print(ftr.shape)
+# # for ftr in ftrs: print(ftr.shape)
+# print(ftrs.size())
